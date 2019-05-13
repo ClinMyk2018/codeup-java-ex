@@ -2,7 +2,7 @@ import java.sql.SQLOutput;
 
 public class HelloWorld {
         public static void main(String[] args) {
-//            System.out.println("Hello, " + "guys!");
+            System.out.println("Hello, " + "guys!");
 
 //            int myFavoriteNumber = 4;
 //            System.out.println(myFavoriteNumber);
@@ -31,16 +31,17 @@ public class HelloWorld {
 //            x += 5;
 
 //            int x = 3;
-//            int y = 4;
-//            y *= x;
+//            int y = 4 * x;
 
-            int x = 10;
-            int y = 2;
-            x /= y;
-            y -= x;
+//            int x = 10;
+//            int y = 2;
+//            x /= y;
+//            y -= x;
 
-            System.out.println(x);
-            System.out.println(y);
+
+            byte charlie = (byte) 128;
+            System.out.println(charlie);
+
 
         }
 }
