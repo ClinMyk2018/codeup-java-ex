@@ -63,97 +63,153 @@ public class ConsoleExercises {
 //        System.out.print("The perimeter of your classroom is: " + perimeter + " feet." +
 //                " With an total area of: " + area + " feet.");
 
-        /*
-
-        NEW GAME
-
-         */
-
         Scanner sc = new Scanner(System.in);
 
-        String name;
-        String begin;
-
-        int potion = 30;
-
         //Random number\\
-
         Random r = new Random();
         int low = 85;
         int high = 100;
         int ranResult = r.nextInt(high-low) + low;
 
+        Random a = new Random();
+        int lowAttack = 5;
+        int highAttack = 12;
+        int ranAttack = a.nextInt(highAttack-lowAttack) + lowAttack;
+
+        String name;
+        int begin;
+        int heroHealth = 100;
+        int heroPotion = 10;
+        int enemyHealth = ranResult;
 
         //Introduce Game\\
-
         System.out.println("Welcome to the great game of HERO'S!");
 
         //Get Hero Name\\
-
         System.out.print("Enter your HERO'S name: ");
         name = sc.nextLine();
+
+        System.out.println("=======================================");
+
         System.out.println("Welcome to the greatest adventure ever: " + name);
 
         //Ready to start?\\
+        System.out.print("Are you ready to begin, YES (choice 1) or NO (choice 2)? Pick a number between 1-2! ");
+        begin = sc.nextInt();
 
-        System.out.print("Are you ready to begin? yes or no ");
-        begin = sc.nextLine();
+        System.out.println("=======================================");
 
-        if (begin == "Yes" || begin == "yes") {
-            System.out.println("Let's Go...!");
-        }else{
-            System.out.println("Too bad... you are playing!");
+        switch (begin)
+        {
+            case 1:
+                System.out.println("Let's Begin");
+                break;
+            case 2:
+                System.out.println("No You have to play");
+                break;
+            default:
+                System.out.println("There are no real choices in life!");
         }
 
         //Start Game\\
-
         System.out.println("Let the adventure begin!");
 
-        //Display stats\\
+        System.out.println("=======================================");
+
+
+        while(enemyHealth>0 && heroHealth > 0){
+            ranAttack = a.nextInt(highAttack-lowAttack) + lowAttack;
+
+            //Display stats\\
             //enemy stats\\
-        System.out.println("Your Enemy is EggMan");
-        System.out.println("Health: " + ranResult);
-        int enemyHealth = sc.nextInt();
-        System.out.println("Attack Points: " + 20);
-        String enemyAttack = sc.nextLine();
+            System.out.println("EggMan");
+            System.out.println("Health: " + enemyHealth);
+            System.out.println("Attack Points: " + ranAttack);
+
+            System.out.println("=======================================");
 
             //hero stats\\
-        System.out.println("Your Stats");
-        System.out.println("Health: " + 100);
-        int heroHealth = sc.nextInt();
-        System.out.print("Attack Points: ");
-        System.out.println(20);
-        int heroAttack = sc.nextInt();
+            System.out.println(name + " Stats");
+            System.out.println("Health: " + heroHealth);
+            System.out.println("Attack Points: " + ranAttack);
 
-        //Actions to take?\\
-            //Attack (decreases enemyHealth)
-        System.out.println("Sword Slash!");
-        boolean heroAttackConfirm = sc.nextBoolean();
-        if (heroAttackConfirm) {
-            heroHealth -= heroAttack;
+            System.out.println("=======================================");
+
+            //Keep attacking until game is over\\
+
+            //Actions to take?\\
+            System.out.println("Choice 1: Sword Slash!");
+            System.out.println("Choice 2: Drink a potion");
+            System.out.println("Choice 3: Run away and let this all end!");
+            System.out.println("Pick a number 1-3!");
+            int heroChoiceConfirm = sc.nextInt();
+
+            System.out.println("=======================================");
+            System.out.println(name + " used: ");
+            ranAttack = a.nextInt(highAttack-lowAttack) + lowAttack;
+            switch (heroChoiceConfirm) {
+                case 1:
+                    //Attack (decreases enemyHealth)
+                    System.out.println("Sword Slash!");
+                    enemyHealth -= ranAttack;
+                    break;
+                case 2:
+                    //Drink potion (adds to heroHealth)
+                    System.out.println("Potion!");
+                    heroHealth += heroPotion;
+                    break;
+                case 3:
+                    //Run? (Try's to end the game)
+                    System.out.println("There is no running...");
+                    break;
+                default:
+                    System.out.println("You had to go to the bathroom, no choice made!");
+            }
+
+            System.out.println("=======================================");
+
+            //automate an enemyAttack after each time the hero takes a turn
+            Random e = new Random();
+//            int ranEnemyOption = e.nextInt(3);
+            int ranEnemyOption = e.nextInt(2);
+
+            ranAttack = a.nextInt(highAttack-lowAttack) + lowAttack;
+
+            System.out.println("EggMan used: ");
+            switch (ranEnemyOption){
+                case 0:
+                    //Enemy Attack (decreases heroHealth)
+                    System.out.println("Super Punch!");
+                    heroHealth -= ranAttack;
+                    break;
+                case 1:
+                    //Enemy Drink's Potion (adds to enemyHealth)
+                    System.out.println("The Queens Potion!");
+                    enemyHealth += heroPotion;
+                    break;
+//                case 2:
+//                    //Enemy is distracted
+//                    System.out.println("Nothing, EggMan is distracted!");
+//                    break;
+            }
+
+            System.out.println("=======================================");
+
+            //Announce end of game\\
+            if (enemyHealth <= 0){
+                System.out.println("The winner is " + name);
+            } else if (heroHealth <= 0){
+                System.out.println("The winner is EggMan!");
+            }
         }
-            //Drink potion (adds to heroHealth)
-        System.out.println("Drink a potion");
-        boolean heroDrinkPotion = sc.nextBoolean();
-        if (heroDrinkPotion) {
-            heroHealth += potion;
-        }
-            //Run? (ends the game)
-        System.out.println("Run away and let this all end!");
-        boolean heroRunAway = sc.nextBoolean();
-        if (heroRunAway) {
-            System.out.println("There is no running...");
-        }
-        continue;
-        //Keep attacking until game is over\\
 
-        //Do I need a loop to start at the attack choice?\\
 
-        //     ?????????????????????      \\
 
-        //Announce end of game\\
 
-        System.out.println("The winner is " + winner);
+
+
+
+
 
 
 
@@ -161,10 +217,6 @@ public class ConsoleExercises {
         //BONUSES!!\\
 
         //allow the user to specify hero stats and enemy stats.
-
-        //automate an enemyAttack after each time the hero takes a turn
-
-        //end the game if either heroHealth or enemyHealth drops to 0.
 
         //Indicate how many potions your hero starts with.
         // Decrement this number each time 'Use Potion' action is used.
