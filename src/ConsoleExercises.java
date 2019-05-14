@@ -74,6 +74,8 @@ public class ConsoleExercises {
         String name;
         String begin;
 
+        int potion = 30;
+
         //Random number\\
 
         Random r = new Random();
@@ -111,34 +113,35 @@ public class ConsoleExercises {
             //enemy stats\\
         System.out.println("Your Enemy is EggMan");
         System.out.println("Health: " + ranResult);
-        enemyHealth = sc.nextInt();
+        int enemyHealth = sc.nextInt();
         System.out.println("Attack Points: " + 20);
-        enemyAttack = sc.nextLine();
+        String enemyAttack = sc.nextLine();
 
             //hero stats\\
         System.out.println("Your Stats");
         System.out.println("Health: " + 100);
-        heroHealth = sc.nextInt();
-        System.out.println("Attack Points: " + 20);
-        heroAttack = sc.nextLine();
+        int heroHealth = sc.nextInt();
+        System.out.print("Attack Points: ");
+        System.out.println(20);
+        int heroAttack = sc.nextInt();
 
         //Actions to take?\\
             //Attack (decreases enemyHealth)
         System.out.println("Sword Slash!");
-        heroAttack = sc.nextInt();
-        if (heroAttack == true) {
+        boolean heroAttackConfirm = sc.nextBoolean();
+        if (heroAttackConfirm) {
             heroHealth -= heroAttack;
         }
             //Drink potion (adds to heroHealth)
         System.out.println("Drink a potion");
-        heroDrinkPotion = sc.nextInt();
-        if (heroDrinkPotion == true) {
-            heroHealth += heroDrinkPotion;
+        boolean heroDrinkPotion = sc.nextBoolean();
+        if (heroDrinkPotion) {
+            heroHealth += potion;
         }
             //Run? (ends the game)
         System.out.println("Run away and let this all end!");
-        heroRunAway = sc.nextInt();
-        if (heroRunAway == true) {
+        boolean heroRunAway = sc.nextBoolean();
+        if (heroRunAway) {
             System.out.println("There is no running...");
         }
         continue;
