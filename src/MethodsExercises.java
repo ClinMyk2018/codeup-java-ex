@@ -3,6 +3,24 @@ import java.util.Random;
 
 public class MethodsExercises {
 
+    public static void main(String args[]) {
+//        Factorial factoring = new Factorial();
+
+        int num;
+        Scanner numberAsk = new Scanner(System.in);
+        System.out.print("Enter a number between 1 and 10: ");
+        num = numberAsk.nextInt();
+        System.out.println("Factorial of " + num + " is " + Factorial.factorial(num));
+    }
+}
+    class Factorial {
+
+        static int factorial(int n)
+        {
+            return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
+
+        }
+
 //    public static void main(String[] args) {
 //        int x = 5;
 //        int y = 8;
