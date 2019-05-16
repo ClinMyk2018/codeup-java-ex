@@ -4,22 +4,22 @@ import java.util.Random;
 public class MethodsExercises {
 
     public static void main(String args[]) {
-//        Factorial factoring = new Factorial();
-
-        int num;
-        Scanner numberAsk = new Scanner(System.in);
-        System.out.print("Enter a number between 1 and 10: ");
-        num = numberAsk.nextInt();
-        System.out.println("Factorial of " + num + " is " + Factorial.factorial(num));
-    }
-}
-    class Factorial {
-
-        static int factorial(int n)
-        {
-            return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
-
-        }
+////        Factorial factoring = new Factorial();
+//
+//        int num;
+//        Scanner numberAsk = new Scanner(System.in);
+//        System.out.print("Enter a number between 1 and 10: ");
+//        num = numberAsk.nextInt();
+//        System.out.println("Factorial of " + num + " is " + Factorial.factorial(num));
+//    }
+//}
+//    class Factorial {
+//
+//        static int factorial(int n)
+//        {
+//            return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
+//
+//        }
 
 //    public static void main(String[] args) {
 //        int x = 5;
@@ -94,14 +94,14 @@ public class MethodsExercises {
 //            return die2;
 //        }
 //
-//    }
+    }
 
 
 //        public static int getInteger ( int minnum, int maxnum){
 //            do {
 //
-////                int maxnum =11;
-////                int minnum =0;
+////                int maxnum ;
+////                int minnum ;
 //                double userInput;
 //                Scanner numask = new Scanner(System.in);
 //                System.out.print("Enter a number between 1 and 10: ");
@@ -117,8 +117,9 @@ public class MethodsExercises {
 //                    System.out.println(" Thank you! ");
 //                    break;
 //                }
-//            }while((getInteger(minnum, maxnum) >= 11 || (getInteger(minnum, maxnum) <= 0)));
+//            } while ((getInteger(minnum, maxnum) >= 11 || (getInteger(minnum, maxnum) <= 0)));
 //            return getInteger(minnum, maxnum);
-//    }
-}
+//        }
+    }
+
 
