@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class MethodsExercises {
+
 //    public static void main(String[] args) {
 //        int x = 5;
 //        int y = 8;
@@ -37,50 +38,45 @@ public class MethodsExercises {
 //        total = args1 % args2;
 //        return total;
 //        }
-    public static void main(String[] args) {
-
-        PairOfDice dice;
-        dice = new PairOfDice();
-
-        if (true) {
-            dice.roll();
-            System.out.println("The dice come up " + dice.getDie1()
-                    + " and " + dice.getDie2());
-        }
-        String answer;
-        Scanner user = new Scanner(System.in);
-        System.out.println("Want to play again?");
-        answer = user.nextLine();
-        if (answer.equals("yes")){
-            return ;
-        }
-    }
-        public static class PairOfDice {
-            private int die1;
-            private int die2;
-        public PairOfDice() {
-            roll();
-        }
-        public void roll() {
-            die1 = (int)(Math.random()*6) + 1;
-            die2 = (int)(Math.random()*6) + 1;
-        }
-
-        public int getDie1() {
-            return die1;
-        }
-        public int getDie2() {
-            return die2;
-        }
-
-        public int getTotal() {
-            return die1 + die2;
-        }
-
-    }
-
-
-}
+//    public static void main(String[] args) {
+//
+//        PairOfDice dice;
+//        dice = new PairOfDice();
+//
+//        if (true) {
+//            dice.roll();
+//            System.out.println("The dice come up " + dice.getDie1()
+//                    + " and " + dice.getDie2());
+//        }
+//        int answer;
+//        Scanner user = new Scanner(System.in);
+//        System.out.println("Want to play again? 1 for yes or 2 for no");
+//        answer = user.nextInt();
+//        if (answer == 1){
+//            dice.roll();
+//        }else{
+//            System.out.println("Thanks!");
+//        }
+//    }
+//        public static class PairOfDice {
+//            private int die1;
+//            private int die2;
+//        public PairOfDice() {
+//            roll();
+//        }
+//        public void roll() {
+//            die1 = (int)(Math.random()*6) + 1;
+//            die2 = (int)(Math.random()*6) + 1;
+//        }
+//
+//        public int getDie1() {
+//            return die1;
+//        }
+//        public int getDie2() {
+//            return die2;
+//        }
+//
+//    }
 
 
 //        public static int getInteger ( int minnum, int maxnum){
@@ -106,4 +102,5 @@ public class MethodsExercises {
 //            }while((getInteger(minnum, maxnum) >= 11 || (getInteger(minnum, maxnum) <= 0)));
 //            return getInteger(minnum, maxnum);
 //    }
+}
 
