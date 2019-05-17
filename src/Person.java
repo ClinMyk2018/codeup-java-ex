@@ -1,43 +1,31 @@
 
+public class Person{
 
-class Room {
-    public int tables;
-    public long chairs;
-    public int students;
-    public long computers;
+    private String name;
 
-
-    public Room(int amttables, long amtchairs) {
-        tables = amttables;
-        chairs = amtchairs;
+    // returns the person's name
+    public String getName () {
+        return this.name;
+    }
+    // changes the name property to the passed value
+    public void setName (String name){
+        this.name = name;
+    }
+    // prints a message to the console using the person's name
+    public String sayHello (){
+        return String.format("%s says hello!", name);
+    }
+    public Person(String name){
+        this.name = name;
     }
 
-    public Room(int amttables, long amtchairs, int amtstudents) {
-        tables = amttables;
-        chairs = amtchairs;
-        students = amtstudents;
-    }
-    public Room(int amttables, long amtchairs, int amtstudents, long amtcomputers) {
-        tables = amttables;
-        chairs = amtchairs;
-        students = amtstudents;
-        computers = amtcomputers;
-    }
-
-    public String getInfo() {
-        return String.format("There are %d tables, and %d chairs in the classroom. %nWe are expecting " +
-                "about %d students here with hopefully %d computers,%n" +
-                "so no extra ones are going to be needed. %n", tables, chairs, students, computers);
-    }
-
-    public static void main(String[] args) {
-        Room day1 = new Room(20, 20);
-        Room day2 = new Room(20, 20);
-        Room day3 = new Room(20, 20, 20);
-        Room day4 = new Room(20, 20, 20, 20);
-        System.out.println(day1.getInfo());
-        System.out.println(day2.getInfo());
-        System.out.println(day3.getInfo());
-        System.out.println(day4.getInfo());
+    public static void main(String[] name) {
+        Person person1 = new Person("John");
+        Person person2 = person1;
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
+        person2.setName("Jane");
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
     }
 }
