@@ -25,9 +25,9 @@ class Room {
     }
 
     public String getInfo() {
-        return String.format("There are %d tables, and %d chairs in the classroom. %n We are expecting" +
-                "about %d students here with hopefully %d computers, so no extra ones are going to " +
-                "be needed", tables, chairs, students, computers);
+        return String.format("There are %d tables, and %d chairs in the classroom. %nWe are expecting " +
+                "about %d students here with hopefully %d computers,%n" +
+                "so no extra ones are going to be needed. %n", tables, chairs, students, computers);
     }
 
     public static void main(String[] args) {
