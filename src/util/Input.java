@@ -23,7 +23,7 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        System.out.println("Please enter a number between " + min + " >= x <= " + max + "!");
+        System.out.println("Please enter a number between " + min + " and " + max + "!");
         boolean correct = false;
         int input;
         try {
@@ -33,8 +33,9 @@ public class Input {
 
                 if (input >= min && input <= max) {
                     correct = true;
+                    System.out.println("Thank you!");
                 } else {
-                    System.out.println("Please enter a value " + min + " >= x <= " + max + "!");
+                    System.out.println("Please enter a number between " + min + " and " + max + "!");
                 }
             } while (!correct);
             return input;
