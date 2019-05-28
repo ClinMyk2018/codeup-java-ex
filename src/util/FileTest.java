@@ -13,7 +13,7 @@ public class FileTest {
         String dataDirectory = "data";
 
         Path folder = Paths.get(dataDirectory);
-        Path file = Paths.get(dataDirectory, "info.txt");
+        Path file = Paths.get(dataDirectory, "contactExercise.txt");
 
         if (Files.notExists(folder)) {
             try {
@@ -37,16 +37,17 @@ public class FileTest {
             System.out.println(file + " file already exist!");
         }
 
-        List<String> groceryList = Arrays.asList("coffee", "milk", "sugar");
+        List<String> contactList = Arrays.asList("Jane | 2102341234", "Logan | 2345436789", "Sarah | 2802349876",
+                "Rhianna | 2654597654", "Alexandra | 2105567854");
         Path filepath = Paths.get(String.valueOf(file));
         try {
-            Files.write(filepath, groceryList);
+            Files.write(filepath, contactList);
             System.out.println("Your list was added.");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("\n Beverage:\n" + " --------\n " + groceryList.get(0) + "\n\n" + " Add-in:\n" +
-                " --------\n " + groceryList.get(1) + ", " + groceryList.get(2));
+        System.out.println("\n Name | Phone Number\n " + "-------------------\n " + contactList.get(0) +
+                "\n " + contactList.get(1));
     }
 
 }
