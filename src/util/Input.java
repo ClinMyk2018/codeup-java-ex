@@ -14,6 +14,10 @@ public class Input {
         System.out.println("Please enter a string ");
         return this.scanner.nextLine();
     }
+    public String getString(int num1, int num2){
+        System.out.printf("Please enter a number between %s and %s!%n", num1, num2);
+        return this.scanner.nextLine();
+    }
 
     public boolean yesNo(){
         System.out.println("(yes/no)");
@@ -23,25 +27,24 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        System.out.println("Please enter a number between " + min + " and " + max + "!");
         boolean correct = false;
         int input;
         try {
 
             do {
-                input = Integer.valueOf(getString());
+                input = Integer.valueOf(getString(min, max));
 
                 if (input >= min && input <= max) {
                     correct = true;
                     System.out.println("Thank you!");
                 } else {
-                    System.out.println("Please enter a number between " + min + " and " + max + "!");
+                    System.out.println("\n this was not between the parameters set!");
                 }
             } while (!correct);
             return input;
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("This input was invalid... please enter and integer.");
             return getInt(min, max);
         }
 
