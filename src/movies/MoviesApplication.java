@@ -27,7 +27,18 @@ public class MoviesApplication {
         input = sc.nextInt();
 
         switch (input){
+            case 1:
+                System.out.println("Show all movies");
+            case 2:
+                    System.out.println("anima cat");
+            case 3:
+                System.out.println("drama cat");
+            case 4:
+                System.out.println("horror cat");
+            case 5:
+                System.out.println("Scifi cat");
             case 0:
+                System.out.println("exit");
         }
     }
 
