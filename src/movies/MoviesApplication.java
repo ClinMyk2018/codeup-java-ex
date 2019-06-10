@@ -1,45 +1,67 @@
 package movies;
 
 import util.Input;
-import java.util.Scanner;
 
 public class MoviesApplication {
-
+    static Input input = new Input();
+    static Movie[] movies = MoviesArray.findAll();
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int input;
+        boolean keepGoing;
 
+        System.err.println("Welcome to the Movie zone!");
+        do {
+            System.out.println("0 - exit\n" +
+                    "1 - view all movies\n" +
+                    "2 - view movies in the animated category\n" +
+                    "3 - view movies in the drama category\n" +
+                    "4 - view movies in the horror category\n" +
+                    "5 - view movies in the scifi category");
 
+            int userAnswer = input.getInt(0, 5);
 
-        System.out.println(
-        "\n\nWhat would you like to do? \n\n" +
-
-        "0 - exit\n" +
-        "1 - view all movies\n" +
-        "2 - view movies in the animated category\n" +
-        "3 - view movies in the drama category\n" +
-        "4 - view movies in the horror category\n" +
-        "5 - view movies in the scifi category \n\n" +
-
-        "Enter your choice: "
-        );
-        input = sc.nextInt();
-
-        switch (input){
-            case 1:
-                System.out.println("Show all movies");
-            case 2:
-                    System.out.println("anima cat");
-            case 3:
-                System.out.println("drama cat");
-            case 4:
-                System.out.println("horror cat");
-            case 5:
-                System.out.println("Scifi cat");
-            case 0:
-                System.out.println("exit");
-        }
+            switch (userAnswer) {
+                case 0:
+                    System.out.println("Bye!");
+                    break;
+                case 1:
+                    for (Movie movie : movies) {
+                        System.out.println(movie.getName() + " -- " + movie.getCategory());
+                    }
+                    break;
+                case 2:
+                    for (Movie movie : movies) {
+                        if (movie.getCategory().equals("animated")) {
+                            System.out.println(movie.getName() + " -- " + movie.getCategory());
+                        }
+                    }
+                    break;
+                case 3:
+                    for (Movie movie : movies) {
+                        if (movie.getCategory().equals("drama")) {
+                            System.out.println(movie.getName() + " -- " + movie.getCategory());
+                        }
+                    }
+                    break;
+                case 4:
+                    for (Movie movie : movies) {
+                        if (movie.getCategory().equals("horror")) {
+                            System.out.println(movie.getName() + " -- " + movie.getCategory());
+                        }
+                    }
+                    break;
+                case 5:
+                    for (Movie movie : movies) {
+                        if (movie.getCategory().equals("scifi")) {
+                            System.out.println(movie.getName() + " -- " + movie.getCategory());
+                        }
+                    }
+                    break;
+                default:
+                    System.err.println("That's not right at all...");
+            }
+            System.out.println("Would you like to continue using the movie zone?");
+            keepGoing = input.yesNo();
+        } while (keepGoing);
     }
-
 }
